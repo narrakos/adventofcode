@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestCorrectAnswer(t *testing.T) {
+func TestCorrectAnswerForPartOne(t *testing.T) {
 	correctAnswer := 71300
 
 	elvesSlice := elves.GetElves()

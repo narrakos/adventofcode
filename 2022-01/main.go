@@ -6,8 +6,12 @@ import (
 
 func main() {
 	elvesSlice := elves.GetElves()
+	partOne(elvesSlice)
+}
+
+func partOne(elvesSlice []*elves.Elf) {
 	elfWithMostCalories := findElfWithMostCalories(elvesSlice)
-	println(elfWithMostCalories.CarriedCalories)
+	println("Answer for part one:", elfWithMostCalories.CarriedCalories)
 }
 
 func findElfWithMostCalories(elves []*elves.Elf) *elves.Elf {
