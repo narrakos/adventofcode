@@ -8,10 +8,10 @@ func TestCorrectAnswerForPartOne(t *testing.T) {
 	correctAnswer := 71300
 
 	calories := getCaloriesCarriedByElves()
-	mostCaloriesCarriedByElf := findElfWithMostCalories(calories)
+	sortCaloriesDescending(calories)
 
-	if mostCaloriesCarriedByElf != correctAnswer {
-		t.Log("Test failed! expected: ", correctAnswer, " actual: ", mostCaloriesCarriedByElf)
+	if calories[0] != correctAnswer {
+		t.Log("Test failed! expected: ", correctAnswer, " actual: ", calories[0])
 		t.Fail()
 	}
 }

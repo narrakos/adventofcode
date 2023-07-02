@@ -3,13 +3,21 @@ package main
 import (
 	utils "adventofcode"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
 
 func main() {
 	calories := getCaloriesCarriedByElves()
+	sortCaloriesDescending(calories)
 	partOne(calories)
+}
+
+func sortCaloriesDescending(calories []int) {
+	sort.Slice(calories, func(i, j int) bool {
+		return calories[i] > calories[j]
+	})
 }
 
 func getCaloriesCarriedByElves() []int {
@@ -47,19 +55,6 @@ func parseCalories(input string) []int {
 	return caloriesCarriedByElves
 }
 
-func partOne(elvesSlice []int) {
-	elfWithMostCalories := findElfWithMostCalories(elvesSlice)
-	println("Answer for part one:", elfWithMostCalories)
-}
-
-func findElfWithMostCalories(elves []int) int {
-	elfWithMostCalories := elves[0]
-
-	for _, elf := range elves {
-		if elfWithMostCalories < elf {
-			elfWithMostCalories = elf
-		}
-	}
-
-	return elfWithMostCalories
+func partOne(calories []int) {
+	println("Answer for part one:", calories[0])
 }
