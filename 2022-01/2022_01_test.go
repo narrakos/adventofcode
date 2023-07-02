@@ -1,18 +1,17 @@
 package main
 
 import (
-	"adventofcode/elves"
 	"testing"
 )
 
 func TestCorrectAnswerForPartOne(t *testing.T) {
 	correctAnswer := 71300
 
-	elvesSlice := elves.GetElves()
-	elfWithMostCalories := findElfWithMostCalories(elvesSlice)
+	calories := getCaloriesCarriedByElves()
+	mostCaloriesCarriedByElf := findElfWithMostCalories(calories)
 
-	if elfWithMostCalories.CarriedCalories != correctAnswer {
-		t.Log("Test failed! expected: ", correctAnswer, " actual: ", elfWithMostCalories.CarriedCalories)
+	if mostCaloriesCarriedByElf != correctAnswer {
+		t.Log("Test failed! expected: ", correctAnswer, " actual: ", mostCaloriesCarriedByElf)
 		t.Fail()
 	}
 }
