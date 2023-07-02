@@ -12,6 +12,7 @@ func main() {
 	calories := getCaloriesCarriedByElves()
 	sortCaloriesDescending(calories)
 	partOne(calories)
+	partTwo(calories)
 }
 
 func sortCaloriesDescending(calories []int) {
@@ -57,4 +58,9 @@ func parseCalories(input string) []int {
 
 func partOne(calories []int) {
 	println("Answer for part one:", calories[0])
+}
+
+func partTwo(calories []int) {
+	println("Answer for part two:", calories[0]+calories[1]+calories[2])
+
 }
