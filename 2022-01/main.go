@@ -2,7 +2,6 @@ package main
 
 import (
 	utils "adventofcode"
-	"os"
 	"sort"
 	"strconv"
 	"strings"
@@ -27,12 +26,7 @@ func getCaloriesCarriedByElves() []int {
 }
 
 func readInputFile() string {
-	rootDir := utils.GetProjectRootDir()
-	data, err := os.ReadFile(rootDir + "/input/calories_carried_by_elves.txt")
-	if err != nil {
-		panic(err)
-	}
-	return string(data)
+	return utils.ReadInputFile("calories_carried_by_elves.txt")
 }
 
 func parseCalories(input string) []int {
